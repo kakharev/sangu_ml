@@ -13,8 +13,8 @@ feature_names = ['Protocol_Type', 'Source_IP', 'Destination_IP', 'Packet_Length'
 data = np.random.rand(num_samples, num_features)
 
 # ვიპოვოთ კორელაცია რომელიც ახლოსაა 1-თან
-data[:, 1] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Source_IP highly correlated with Protocol_Type
-data[:, 2] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Destination_IP highly correlated with Protocol_Type
+data[:, 1] = data[:, 0] + np.random.normal(0, 0.05, num_samples) 
+data[:, 2] = data[:, 0] + np.random.normal(0, 0.05, num_samples)
 
 # შევქმნათ DataFrame რანდომული მონაცემებით და თუთოეული ფიჩერისთვის
 df = pd.DataFrame(data, columns=feature_names)
