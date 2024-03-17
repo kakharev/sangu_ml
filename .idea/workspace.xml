@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56215dcf-17e2-40ec-960e-97d0a42da9b5" name="Changes" comment="1">
+    <list default="true" id="56215dcf-17e2-40ec-960e-97d0a42da9b5" name="Changes" comment="2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/correlation_matrix.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/highest_correlation.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation_matrix.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/correlation_matrix.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tst.py" beforeDir="false" afterPath="$PROJECT_DIR$/tst.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +24,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "searchQuery": "tst",
+      "state": "OPEN",
+      "assignee": "kakharev"
+    },
+    {
+      "searchQuery": "tst.py",
+      "state": "OPEN",
+      "assignee": "kakharev"
+    }
+  ],
+  "lastFilter": {
+    "searchQuery": "tst.py",
+    "state": "OPEN",
+    "assignee": "kakharev"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bc1acb85-96ca-4458-806f-7472c0588349" />
+        <option name="url" value="https://github.com/kakharev/sangu_ml" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2dpDRBno49togRLxjwwlRL3pZ8t" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -88,11 +114,36 @@
       <option name="project" value="LOCAL" />
       <updated>1710697616038</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1">
+      <option name="closed" value="true" />
+      <created>1710699241152</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710699241152</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1">
+      <option name="closed" value="true" />
+      <created>1710699254561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710699254561</updated>
+    </task>
+    <task id="LOCAL-00006" summary="2">
+      <option name="closed" value="true" />
+      <created>1710699425094</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710699425094</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
 </project>

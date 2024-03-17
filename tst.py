@@ -3,33 +3,33 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Step 1: Generate random network packet data with headers and write to CSV file
+# Step 1: დავაგენერიროთ ქსელური პაკეტების ნუსხა რანდომული მონაცემებით და შევქმნათ CSV ფაილი
 np.random.seed(0)
 num_samples = 200
 num_features = 4
 feature_names = ['Protocol_Type', 'Source_IP', 'Destination_IP', 'Packet_Length']
 
-# Generate random data for each feature
+# შევავსოთ ნუსხა თითოეული სვეტისთვის (ვგულისხმობ features)
 data = np.random.rand(num_samples, num_features)
 
-# Introduce correlations near 1 between specific features
+# ვიპოვოთ კორელაცია რომელიც ახლოსაა 1-თან
 data[:, 1] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Source_IP highly correlated with Protocol_Type
 data[:, 2] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Destination_IP highly correlated with Protocol_Type
 
-# Create DataFrame with random data and feature names
+# შევქმნათ DataFrame რანდომული მონაცემებით და თუთოეული ფიჩერისთვის
 df = pd.DataFrame(data, columns=feature_names)
 
-# Write DataFrame to CSV file
+# შევინახოთ DataFrame CSV ფაილში
 df.to_csv('network_data.csv', index=False)
 
-# Step 2: Calculate the correlation matrix
+# Step 2: გამოვთვალოთ correlation matrix
 correlation_matrix = np.corrcoef(data, rowvar=False)
 
-# Write correlation matrix to CSV file
+# შევინახოთ correlation matrix CSV ფაილში
 correlation_df = pd.DataFrame(correlation_matrix, columns=feature_names, index=feature_names)
 correlation_df.to_csv('correlation_data.csv', index=True)
 
-# Step 3: Plot correlation matrix as heatmap and save to PDF
+# Step 3: დავამუშავოთ correlation matrix როგორც heatmap და შევინახოთ PDF-ში
 sns.set(style="white")
 plt.figure(figsize=(8, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0, xticklabels=feature_names, yticklabels=feature_names)
@@ -38,3 +38,4 @@ plt.savefig('correlation_matrix.pdf')
 plt.close()
 
 print("ყველა ფაილი წარმატებით დაგენენირდა. მოიძეთ ფაილები პროექტის ფოლდერში")
+print("აგრეთვე, დაკავშირებული ვართ github-თან და საჭიროა ფაილების დასინქრონება")
