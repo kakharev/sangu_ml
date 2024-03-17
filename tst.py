@@ -1,35 +1,40 @@
 import numpy as np
 import pandas as pd
-from scipy.stats import pearsonr
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Step 1: Generate network packet data and write to CSV file
+# Step 1: Generate random network packet data with headers and write to CSV file
 np.random.seed(0)
-data = np.random.rand(200, 4)
-df = pd.DataFrame(data)
-df.to_csv('network_data.csv', index=False, header=False)
+num_samples = 200
+num_features = 4
+feature_names = ['Protocol_Type', 'Source_IP', 'Destination_IP', 'Packet_Length']
+
+# Generate random data for each feature
+data = np.random.rand(num_samples, num_features)
+
+# Introduce correlations near 1 between specific features
+data[:, 1] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Source_IP highly correlated with Protocol_Type
+data[:, 2] = data[:, 0] + np.random.normal(0, 0.05, num_samples)  # Making Destination_IP highly correlated with Protocol_Type
+
+# Create DataFrame with random data and feature names
+df = pd.DataFrame(data, columns=feature_names)
+
+# Write DataFrame to CSV file
+df.to_csv('network_data.csv', index=False)
 
 # Step 2: Calculate the correlation matrix
-df = pd.read_csv('network_data.csv', header=None)
+correlation_matrix = np.corrcoef(data, rowvar=False)
 
-correlation_matrix = np.corrcoef(df.values, rowvar=False)
+# Write correlation matrix to CSV file
+correlation_df = pd.DataFrame(correlation_matrix, columns=feature_names, index=feature_names)
+correlation_df.to_csv('correlation_data.csv', index=True)
 
-# Step 3: Plot and save the correlation matrix to PDF
+# Step 3: Plot correlation matrix as heatmap and save to PDF
 sns.set(style="white")
 plt.figure(figsize=(8, 6))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', xticklabels=df.columns, yticklabels=df.columns)
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0, xticklabels=feature_names, yticklabels=feature_names)
 plt.title('Correlation Matrix')
 plt.savefig('correlation_matrix.pdf')
 plt.close()
-
-# Step 4: Find the highest correlation and save the names of the two features
-max_corr = np.max(correlation_matrix)
-max_corr_indices = np.unravel_index(np.argmax(correlation_matrix), correlation_matrix.shape)
-max_corr_features = [df.columns[max_corr_indices[0]], df.columns[max_corr_indices[1]]]
-
-# Step 5: Save the names of the features with highest correlation to PDF
-with open('highest_correlation.pdf', 'w') as f:
-    f.write(f"Features with highest correlation: {max_corr_features[0]} and {max_corr_features[1]}")
 
 print("Files generated successfully.")
