@@ -37,4 +37,4 @@ plt.title('Correlation Matrix')
 plt.savefig('correlation_matrix.pdf')
 plt.close()
 
-print("Files generated successfully.")
+print("ყველა ფაილი წარმატებით დაგენენირდა. მოიძეთ ფაილები პროექტის ფოლდერში")
