@@ -106,7 +106,7 @@ def display_data(df):
 def display_most_used_ip(df):
     most_common_ip = Counter(df['IP Address']).most_common(1)
     if most_common_ip:
-        messagebox.showinfo("განმეორებადი მისამართია", f"The most used IP address is: {most_common_ip[0][0]}")
+        messagebox.showinfo("განმეორებადი მისამართია", f"განმეორებადი მისამართია: {most_common_ip[0][0]}")
     else:
         messagebox.showinfo("განმეორებადი მისამართი", "No data available")
 
@@ -115,7 +115,7 @@ def display_most_grouped(df):
     most_grouped_timestamp = Counter(df['Timestamp']).most_common(1)
     most_grouped_ip = Counter(df['IP Address']).most_common(1)
     messagebox.showinfo("Most Grouped Data", f"The most grouped timestamp is: {most_grouped_timestamp[0][0]}\n"
-                                             f"The most grouped IP address is: {most_grouped_ip[0][0]}")
+                                             f"The most grouped IP address is (ამის დაჯგუფება არამფერს მომცემს): {most_grouped_ip[0][0]}")
 
 
 def display_most_continuous_ip(df):
@@ -123,11 +123,11 @@ def display_most_continuous_ip(df):
     max_count = max(ip_counter.values())
     most_continuous_ips = [ip for ip, count in ip_counter.items() if count == max_count]
     messagebox.showinfo("ეს რაღაცას მაიმუნობს აშკარად!!!",
-                        f"The most continuous IP address(es) is/are: {', '.join(most_continuous_ips)}")
+                        f"ხშირად განმეორებადი მისამართებია: {', '.join(most_continuous_ips)}")
 
 
 def display_regression_graph(df):
-    # Add regression graph display code here
+    # Add regression graph display code here. ჯერ არ დამისრულებია
     pass
 
 
@@ -140,17 +140,17 @@ def display_unique_ip_addresses(df):
     frame = tk.Frame(unique_ips_window)
     frame.pack(padx=10, pady=10)
 
-    # Listbox to display unique IP addresses
+    # მაჩვენებს უნიკალუს მისამართ(ებ)ს
     listbox = tk.Listbox(frame, width=40, height=10)
     listbox.pack(side="left", fill="y")
 
-    # Scrollbar
+    # სქროლერი
     scrollbar = tk.Scrollbar(frame, orient="vertical", command=listbox.yview)
     scrollbar.pack(side="right", fill="y")
 
     listbox.config(yscrollcommand=scrollbar.set)
 
-    # Insert unique IP addresses into the listbox
+    # უნიკალრი მისამართბის ნუსხის შევსება
     for ip in unique_ips:
         listbox.insert("end", ip)
 
