@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56215dcf-17e2-40ec-960e-97d0a42da9b5" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/clc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ddos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,10 @@
     "Python.LOGFILE.executor": "Run",
     "Python.REGGR.executor": "Run",
     "Python.clc.executor": "Run",
+    "Python.ddos.executor": "Run",
+    "Python.fowrms1.executor": "Run",
     "Python.log.executor": "Run",
+    "Python.log_parser.executor": "Run",
     "Python.regression.executor": "Run",
     "Python.regression1.executor": "Run",
     "Python.s.executor": "Run",
@@ -222,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711129979058</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1711169249362</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711169249362</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
